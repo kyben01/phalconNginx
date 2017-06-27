@@ -89,7 +89,7 @@ services:
        - livereload
 
 ############################################
-### APP -> WEB
+### APP -> LIVE RELOAD
 ############################################
   livereload:
     image: devcrea/livereload

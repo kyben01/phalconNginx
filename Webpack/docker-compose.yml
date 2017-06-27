@@ -1,0 +1,21 @@
+﻿version: '2'
+services:
+  nginx:
+    image: nginx
+    container_name: my-nginx-container
+    ports:
+      - "8087:80"
+    volumes:
+      - wwwroot:/usr/share/nginx/html
+  webpack:
+    image: webpack:alpine
+    container_name: my-webpack-container
+    ports:
+      - "35729:35729" 
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - wwwroot:/usr/share/nginx/html
+volumes:
+  wwwroot:
+    driver: ./app
